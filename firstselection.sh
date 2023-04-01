@@ -2,6 +2,8 @@
 mkdir DataBases 2>> /dev/null
 cd DataBases
 function menu1 {
+    trap exit_program SIGINT #exit when pressing ctrl+c
+    echo "----------------------------------------"
     echo Hello Dear,
     echo kindly choose one option from the list below 
     echo "1. Create a database "
@@ -9,6 +11,7 @@ function menu1 {
     echo "3. Connect to a database "
     echo "4. Delete a database "
     echo "5. Exit "
+    echo "-----------------------------------------"
     read -p "So what is your choice? [1-5]" choice
     case $choice in
         1) create_database ;;
@@ -36,6 +39,13 @@ function create_database {
 #list all databases
 function list_databases {
     echo "List of existing databases:"
-    ls DataBases
+    ls
     menu1
 }
+#exit program
+function exit_program() {
+    echo "Exiting program..."
+    exit 0
+}
+
+menu1
