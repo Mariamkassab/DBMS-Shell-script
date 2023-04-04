@@ -16,6 +16,19 @@ fi
 
 }
 
+# function to check if the table is exist
+function check_table_exists {
+
+read -p "Enter the table name : " table_name
+
+if [ -f "$table_name" ]; then
+    return 0
+else
+    echo "Error, kindly enter a valid table name"
+    check_table_exists
+fi
+}
+
 # menu2 skeleton
 
 function menu2 {
