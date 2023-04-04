@@ -27,19 +27,20 @@ function create_database {
     read -p "Enter the database name: " db_name
     if [[ ! "$db_name" =~ ^[a-zA-Z0-9_]+$ ]]; then
         echo "Invalid database name. Please use only alphanumeric characters and underscore."
+        echo "Please try again"
+        create_database
     elif check_database_exists "$db_name"; then
         return
     else
         mkdir "$db_name"
         echo "Database created successfully!"
-    fi
     menu1
 }
 
 #list all databases
 function list_databases {
     echo "List of existing databases:"
-    ls
+    ls -a
     menu1
 }
 #exit program
@@ -47,5 +48,14 @@ function exit_program() {
     echo "Exiting program..."
     exit 0
 }
-
+# Function to trap Ctrl + D (EOF) signal and redirect to main menu
+# i personally think we won't need it though, because we can just redirect to the main menu by calling the function menu1
+function redirect_on_ctrl_d() {
+    echo "Press Ctrl + D to return to the main menu."
+    while read -r line || [[ -n $line ]]; do
+        # Do nothing - wait for Ctrl + D (EOF)
+        :
+    done
+    menu1 # Redirect to main menu
+}
 menu1
