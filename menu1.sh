@@ -4,23 +4,19 @@ cd DataBases
 
 # function to check if the database is exist
 function check_database_exists {
-
 read -p "Enter the database name : " database_name
-
 if [ -d "$database_name" ]; then
     return 0
 else
     echo "Error, kindly enter a valid database name"
     check_database_exists
 fi
-
 }
+
 
 # function to check if the table is exist
 function check_table_exists {
-
 read -p "Enter the table name : " table_name
-
 if [ -f "$table_name" ]; then
     return 0
 else
@@ -29,8 +25,8 @@ else
 fi
 }
 
-# menu2 skeleton
 
+# menu2 skeleton
 function menu2 {
     trap exit_program SIGINT #exit when pressing ctrl+c
     echo "----------------------------------------"
@@ -63,7 +59,6 @@ function menu2 {
 
 
 # menu1 skeleton
-
 function menu1 {
     trap exit_program SIGINT #exit when pressing ctrl+c
     echo "----------------------------------------"
@@ -111,20 +106,17 @@ function list_databases {
 
 #connect to the database
 function connect_database {
-
     check_database_exists
     cd $database_name
     echo "you are now inside your database"
     echo "your current path is :"
     pwd
     menu2
-
 }
 
 
 #drop a database
  function drop_database {
- 
     check_database_exists
     rm -ir $database_name
     echo "The entered database has been deleted"
@@ -140,24 +132,6 @@ function exit_program() {
 
 #calling function menu1
 menu1
-
-
-
-# developing menu2
-
-# checking if the table exists
-function check_table_exists {
-
-read -p "Enter the table name : " table_name
-
-if [ -f "$table_name" ]; then
-    return 0
-else
-    echo "Error, kindly enter a valid table name"
-    check_database_exists
-fi
-}
-
 
 
 
