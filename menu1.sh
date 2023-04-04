@@ -58,6 +58,8 @@ function menu2 {
 }
 
 
+
+#-----------------------------------------------------------------------------------------
 # menu1 skeleton
 function menu1 {
     trap exit_program SIGINT #exit when pressing ctrl+c
