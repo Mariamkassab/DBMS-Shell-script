@@ -57,7 +57,10 @@ function menu2 {
     esac
 }
 
-
+function list_tables {
+         echo "The tables are :"
+         ls -l
+}
 
 #-----------------------------------------------------------------------------------------
 # menu1 skeleton
