@@ -14,9 +14,11 @@ fi
 }
 
 
+
 # function to check if the table is exist
 function check_table_exists {
 read -p "Enter the table name : " table_name
+    export t_name="$table_name"
 if [ -f "$table_name" ]; then
     return 0
 else
@@ -57,10 +59,44 @@ function menu2 {
     esac
 }
 
+# list from/all table
 function list_tables {
          echo "The tables are :"
          ls -l
 }
+
+# listing options
+function table_listing {
+         echo "1. show all table :"
+         echo "2. List from the table :"
+         read -p "So what is your choice? [1-2] : " choice
+             case $choice in
+             1) sed 's/:/ /g' ./$table_name | column -t
+                  ;;
+             2) echo ok 
+       #  read -p "which column name would you want? " column
+        # read -p "which row (PK) name would you want? " row
+    #sed 's/:/\t/g' /etc/passwd | column -t | awk -F'\t' '$7 == "/bin/bash" {print $1}'
+                  ;;
+             *) echo "Invalid choice. Please try again." ; table_listing ;;
+             esac
+}
+    
+#select from the table
+function select_from_table { 
+         echo "kindly select a spasific table to list, "
+         check_table_exists
+         table_listing  
+}
+
+#
+#function update_table {
+
+
+
+
+#}
+
 
 #-----------------------------------------------------------------------------------------
 # menu1 skeleton
