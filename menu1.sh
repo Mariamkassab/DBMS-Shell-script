@@ -59,6 +59,14 @@ function menu2 {
     esac
 }
 
+
+# list from/all table
+function list_tables {
+         echo "The tables are :"
+         ls -l
+         menu2
+}
+
 # list from/all table
 function list_tables {
          echo "The tables are :"
@@ -74,12 +82,9 @@ function table_listing {
              case $choice in
              1) sed 's/:/ /g' ./$table_name | column -t
                   ;;
-             2) echo ok 
-        read -p "which column name would you want? " column
-        read -p "which row (PK) name would you want? " row
-   # sed 's/:/\t/g' /etc/passwd | column -t | awk -F'\t' '$row" {print $column}'
-    #awk -F"," -v columns="$column" 'BEGIN {split(columns, a, ",")} {for (i=1; i<=length(a); i++) printf "%s,", $a[i]; printf "\n"}' file.csv | sed -n "${row}p"
-
+             2)read -p "which rows value would you want to display its value? " row
+               sed 's/:/\t/g' ./$table_name | grep $row
+                  menu2
                   ;;
              *) echo "Invalid choice. Please try again." ; table_listing ;;
              esac
@@ -96,7 +101,8 @@ function select_from_table {
 function update_table {
     read -p "which column name would you want? " column
     read -p "which row (PK) name would you want? " row
-    
+    # sed 's/:/\t/g' /etc/passwd | column -t | awk -F'\t' '$row" {print $column}'
+    #awk -F"," -v columns="$column" 'BEGIN {split(columns, a, ",")} {for (i=1; i<=length(a); i++) printf "%s,", $a[i]; printf "\n"}' file.csv | sed -n "${row}p"
     # condition to check null or not null & PK
     # contion to check datatype
 }
