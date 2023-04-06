@@ -83,7 +83,8 @@ function table_listing {
              1) sed 's/:/ /g' ./$table_name | column -t
                   ;;
              2)read -p "which rows value would you want to display its value? " row
-               sed 's/:/\t/g' ./$table_name | grep $row
+               sed 's/:/\t/g' ./$table_name | head -1 | column -t
+               sed 's/:/\t/g' ./$table_name | grep $row | column -t 
                   menu2
                   ;;
              *) echo "Invalid choice. Please try again." ; table_listing ;;
