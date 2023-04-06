@@ -103,6 +103,14 @@ function update_table {
 }
 
 
+#back funcation from menu2 to menu1 
+function back {
+#when we connect to the database we didnot get back to all data bases
+# we should cd ..  
+   cd ..       
+   menu1
+}
+
 #-----------------------------------------------------------------------------------------
 # menu1 skeleton
 function menu1 {
@@ -174,15 +182,6 @@ function connect_database {
 function exit_program() {
     echo "Exiting program..."
     exit 0
-}
-
-
-#back funcation from menu2 to menu1 
-function back {
-#when we connect to the database we didnot get back to all data bases
-# we should cd ..  
-   cd ..       
-   menu1
 }
 
 #calling function menu1
