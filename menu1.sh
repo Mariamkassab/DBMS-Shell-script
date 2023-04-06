@@ -53,19 +53,13 @@ function menu2 {
         5) select_from_table ;;
         6) delete_from_table ;;
         7) update_table ;;
-        8) bake ;;
+        8) back ;;
         5) exit_program ;;
         *) echo "Invalid choice. Please try again." ; menu1 ;;
     esac
 }
 
 
-# list from/all table
-function list_tables {
-         echo "The tables are :"
-         ls -l
-         menu2
-}
 
 # list from/all table
 function list_tables {
@@ -180,6 +174,15 @@ function connect_database {
 function exit_program() {
     echo "Exiting program..."
     exit 0
+}
+
+
+#back funcation from menu2 to menu1 
+function back {
+#when we connect to the database we didnot get back to all data bases
+# we should cd ..  
+   cd ..       
+   menu1
 }
 
 #calling function menu1
