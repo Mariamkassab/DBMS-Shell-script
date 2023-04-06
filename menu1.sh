@@ -63,6 +63,7 @@ function menu2 {
 function list_tables {
          echo "The tables are :"
          ls -l
+         menu2
 }
 
 # listing options
@@ -74,9 +75,11 @@ function table_listing {
              1) sed 's/:/ /g' ./$table_name | column -t
                   ;;
              2) echo ok 
-       #  read -p "which column name would you want? " column
-        # read -p "which row (PK) name would you want? " row
-    #sed 's/:/\t/g' /etc/passwd | column -t | awk -F'\t' '$7 == "/bin/bash" {print $1}'
+        read -p "which column name would you want? " column
+        read -p "which row (PK) name would you want? " row
+   # sed 's/:/\t/g' /etc/passwd | column -t | awk -F'\t' '$row" {print $column}'
+    #awk -F"," -v columns="$column" 'BEGIN {split(columns, a, ",")} {for (i=1; i<=length(a); i++) printf "%s,", $a[i]; printf "\n"}' file.csv | sed -n "${row}p"
+
                   ;;
              *) echo "Invalid choice. Please try again." ; table_listing ;;
              esac
@@ -89,13 +92,14 @@ function select_from_table {
          table_listing  
 }
 
-#
-#function update_table {
-
-
-
-
-#}
+#update in table 
+function update_table {
+    read -p "which column name would you want? " column
+    read -p "which row (PK) name would you want? " row
+    
+    # condition to check null or not null & PK
+    # contion to check datatype
+}
 
 
 #-----------------------------------------------------------------------------------------
