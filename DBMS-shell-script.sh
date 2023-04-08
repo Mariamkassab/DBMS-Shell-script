@@ -182,13 +182,15 @@ function select_from_table {
          echo "kindly select a spasific table to list, "
          check_table_exists
          table_listing  
-         echo The table deleted sucessfully 
+         menu2
 }
 
 #
 function drop_table {
          check_table_exists
          rm $t_name
+         echo The table deleted sucessfully 
+         menu2
 }
 
 
@@ -303,14 +305,15 @@ if [ -z "$m" ]; then
 
 #updateing a value in a table 
 function update_table {
-    sed 's/:/ /g' ./$table_name | column -t
     check_table_exists
+    #sed 's/:/ /g' $t_name | column -t
     column_detection
     row_detection
     read -p "Enter the new value for ${column_de} & PK = ${row_de}: " new_value
     awk -F: -v OFS=":" -v row_no="$row_no" -v column_no="$column_no" -v new_value="$new_value" 'NR==row_no {$column_no=new_value} {print}' "$t_name" > temp_file
     mv temp_file "$t_name"
     echo "Table updated successfully."   
+    menu2
 }
 
 #deleting from table
@@ -321,6 +324,7 @@ function delete_from_table {
     awk -F: -v OFS=":" -v row="$row_no" '{if (NR!=row) print}' "$t_name" > temp_file
     mv temp_file "$t_name"
     echo "Row deleted successfully."
+    menu2
 }
 
 
