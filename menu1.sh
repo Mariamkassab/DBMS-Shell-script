@@ -92,14 +92,43 @@ function select_from_table {
          table_listing  
 }
 
-#update in table 
+
+# detect the input column name number  
+function column_detection {
+    read -p "Which column name would you like to detect? " column_de
+    m=$(awk -F: -v col="$column_de" 'NR==1{ for (i=1; i<=NF; i++){if($i==col) m=i } } END {print m}' "$t_name")
+    if [ -z "$m" ]; then
+        echo "Error: kindly enter a valid Column name as '$column_de' not found in the table '$t_name'"
+       column_detection
+    else
+        echo "$m"
+        export column_no=$m
+        return 0
+    fi
+}
+
+# detect the input row name number  
+function row_detection {
+     read -p "which row name (PK's value) would you want? " row_de
+     num_of_rows=$(awk 'END{ print NR }' "$t_name")
+     export num_of_rows
+     m=$(awk -F: -v roww="$row_de" '{if($1==roww) m=NR } END {print m}' "$t_name")
+     
+if [ -z "$m" ]; then
+        echo "Error: kindly enter a valid row name as '$row_de' not found in the table '$t_name'"
+       row_detection
+    else
+        export row_no=$m
+        return 0
+    fi
+}
+
+
+
+
+#updateing a value in a table 
 function update_table {
-    read -p "which column name would you want? " column
-    read -p "which row (PK) name would you want? " row
-    # sed 's/:/\t/g' /etc/passwd | column -t | awk -F'\t' '$row" {print $column}'
-    #awk -F"," -v columns="$column" 'BEGIN {split(columns, a, ",")} {for (i=1; i<=length(a); i++) printf "%s,", $a[i]; printf "\n"}' file.csv | sed -n "${row}p"
-    # condition to check null or not null & PK
-    # contion to check datatype
+    
 }
 
 
