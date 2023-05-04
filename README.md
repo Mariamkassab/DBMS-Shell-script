@@ -22,5 +22,5 @@
 ### Hints:
 * The Database will store as Directory on Current Script File.
 * The Select of Rows displayed in screen/terminal in  an Accepted/Good Format.
-* Ask about columns datatypes in create table and check on them in both insert and update.
-* Ask about the primary key in creating a table and check for it in the insert into table.
+* We are asking about columns datatypes in create table and check on them in both insert and update.
+* We are asking about the primary key in creating a table and check for it in the insert into table.
