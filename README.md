@@ -1,6 +1,6 @@
 # Bash Shell Script Database Management System (DBMS):
   
- * This is a simple DBMS project using Bash Script Implemented by @Mariam-Kassab and @Rania_Fahmy - ITI intake 43 - DevOps Track - Q3
+ * This is a DBMS project using Bash Script Implemented by @Mariam-Kassab and @Rania_Fahmy - ITI intake 43 - Q3 - DevOps Track
  
  * The Project aims to develop DBMS, enabling users to store and retrieve data from Hard-disk.
 ---
