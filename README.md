@@ -24,3 +24,8 @@
 * The Select of Rows displayed in screen/terminal in  an Accepted/Good Format.
 * We are asking about columns datatypes in create table and check on them in both insert and update.
 * We are asking about the primary key in creating a table and check for it in the insert into table.
+
+---
+
+![iti-logo (1)](https://user-images.githubusercontent.com/123699968/236325083-64e1b44b-cd77-439e-ac10-797b35e8c637.png)
+
