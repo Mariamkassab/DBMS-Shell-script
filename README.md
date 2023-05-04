@@ -30,8 +30,8 @@
 ---
 ## Contributors:
 
-* @all-contributors please add @<Mariamkassab>
-* @all-contributors please add @<Rania193>
+@all-contributors please add @<Mariamkassab>
+@all-contributors please add @<Rania193>
 
 ---
 ![iti-logo (1)](https://user-images.githubusercontent.com/123699968/236325083-64e1b44b-cd77-439e-ac10-797b35e8c637.png)
