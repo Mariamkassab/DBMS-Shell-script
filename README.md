@@ -1,7 +1,7 @@
 # Bash Shell Script Database Management System (DBMS):
 
   * The Project aims to develop DBMS, enabling users to store and retrieve data from Hard-disk.
-
+---
 ## The Project Features:
   * The Application will be CLI Menu based app, that will provide to user with this Menu item:
 ### Main Menu:
@@ -9,7 +9,7 @@
 * List Databases
 * Connect To Databases
 * Drop Database
-
+---
 ### Upon user Connect to Specific Database, there will be a new Screen with this Menu:
 * Create Table 
 * List Tables
@@ -18,7 +18,7 @@
 * Select From Table
 * Delete From Table
 * Update Table
-
+---
 ### Hints:
 * The Database will store as Directory on Current Script File.
 * The Select of Rows displayed in screen/terminal in  an Accepted/Good Format.
@@ -28,4 +28,5 @@
 ---
 
 ![iti-logo (1)](https://user-images.githubusercontent.com/123699968/236325083-64e1b44b-cd77-439e-ac10-797b35e8c637.png)
+![git](https://user-images.githubusercontent.com/123699968/236325171-81577998-0292-4f59-861b-56ae127036a3.png)
 
