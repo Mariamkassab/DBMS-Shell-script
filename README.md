@@ -28,22 +28,7 @@
 * We are asking about the primary key in creating a table and check for it in the insert into table.
 
 ---
-## Contributors:
-## Contributors
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-@all-contributors please add @<Mariamkassab>
-@all-contributors please add @<Rania193>
-
----
 ![iti-logo (1)](https://user-images.githubusercontent.com/123699968/236325083-64e1b44b-cd77-439e-ac10-797b35e8c637.png)
 ![git](https://user-images.githubusercontent.com/123699968/236325171-81577998-0292-4f59-861b-56ae127036a3.png)
 
