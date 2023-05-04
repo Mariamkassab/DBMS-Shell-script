@@ -1,6 +1,8 @@
 # Bash Shell Script Database Management System (DBMS):
-
-  * The Project aims to develop DBMS, enabling users to store and retrieve data from Hard-disk.
+  
+ * This is a simple DBMS project using Bash Script Implemented by @Mariam-Kassab and @Rania_Fahmy - ITI intake 43 - DevOps Track - Q3
+ 
+ * The Project aims to develop DBMS, enabling users to store and retrieve data from Hard-disk.
 ---
 ## The Project Features:
   * The Application will be CLI Menu based app, that will provide to user with this Menu item:
