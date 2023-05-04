@@ -41,7 +41,7 @@ function menu2 {
     echo "5. Select From Table "
     echo "6. Delete From Table "
     echo "7. Update Table "
-    echo "8. Bake "
+    echo "8. back "
     echo "9. Exit "
     echo "-----------------------------------------"
     read -p "So what is your choice? [1-9] : " choice
@@ -54,8 +54,8 @@ function menu2 {
         6) delete_from_table ;;
         7) update_table ;;
         8) back ;;
-        5) exit_program ;;
-        *) echo "Invalid choice. Please try again." ; menu1 ;;
+        9) exit_program ;;
+        *) echo "Invalid choice. Please try again." ; menu2 ;;
     esac
 }
 
@@ -235,7 +235,7 @@ function insert_into_table {
                 echo "Error: Value '$input' contains invalid character ':'."
                 insert_into_table
             fi
-            if ! [[ "$input" =~ ^[[:alnum:]][[:alpha:]][[:alnum:]]$ ]]; then
+            if ! [[ "$input" =~ ^[a-zA-Z0-9_]+$ ]]; then
                 echo "Error: Value '$input' is not a string with at least one alphabet character."
                 insert_into_table
             fi
@@ -365,6 +365,7 @@ function create_database {
     read -p "Enter the database name: " db_name
     if [[ ! "$db_name" =~ ^[a-zA-Z0-9_]+$ ]]; then
         echo "Invalid database name. Please use only alphanumeric characters and underscore."
+        create_database
     elif [ -d "$db_name" ] ; then
         echo "The entered database name is already exist, kindly enter another name"
         create_database
